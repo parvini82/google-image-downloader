@@ -24,7 +24,7 @@ This project is a Node.js script that downloads images based on a search query, 
    - Run `npm install`
 4. Create a .env file in the root directory with the following content. You can either use your own API key by signing up on serper.dev or use the example key provided below."
    - `SERPER_API_KEY=4264ac4a0e173e9dac60e52c17d193256a65d79c`
-   - `DATABASE_URL=ppostgres://username:password@localhost:5432/your_database`
+   - `DATABASE_URL=postgres://<username>:<password>@<host>:<port>/<database_name>`
  
 ## Usage
 
