@@ -36,10 +36,3 @@ This project is a Node.js script that downloads images based on a search query, 
 Run unit tests using:
 - `npm test`
 
-## License
-
-This project is licensed under the MIT License.
-
----
-
-Feel free to modify any sections as needed to better fit your project details!
