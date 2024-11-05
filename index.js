@@ -8,13 +8,12 @@ const main = async (query, maxResults = 5) => {
 
     for (let i = 0; i < imageUrls.length; i++) {
         const url = imageUrls[i];
-        const outputPath = path.resolve(__dirname, `images/image_${i}.jpg`);
+        const outputPath = path.resolve(__dirname, `images/${query}_${i}.jpg`);
         await downloadAndResizeImage(url, outputPath);
-
         await saveImageToDatabase(query, url, null);
     }
 
     console.log("All images processed.");
 };
 
-main("cute kittens", 5);
+main("cute kittens", 10);
