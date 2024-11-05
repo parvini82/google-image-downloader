@@ -18,8 +18,7 @@ const fetchImageUrls = async (query, maxResults = 5) => {
 
     try {
         const response = await axios.request(config);
-
-        const imageUrls = response.data.images.map(image => image.source);
+        const imageUrls = response.data.images.map(image => image.imageUrl);
 
         return imageUrls.slice(0, maxResults);  // Limit to the maxResults count
     } catch (error) {
