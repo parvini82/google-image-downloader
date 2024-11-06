@@ -15,8 +15,8 @@ const createImagesTableIfNotExists = async () => {
                 query VARCHAR(255),
                 url TEXT,
                 data BYTEA
-            `;
-        ;
+            );
+        `;
         await client.query(createTableQuery);
         console.log("Table 'images' is ready.");
     } catch (error) {

@@ -1,6 +1,6 @@
 const fetchImageUrls = require('./imageFetcher');
 const downloadAndResizeImage = require('./imageProcessor');
-const { saveImageToDatabase } = require('./database');
+const { createImagesTableIfNotExists,saveImageToDatabase } = require('./database');
 const path = require('path');
 
 

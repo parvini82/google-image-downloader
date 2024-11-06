@@ -7,7 +7,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URL=postgres://postgres:Palpali490@db:5432/serper_images 
+      - DATABASE_URL=${DATABASE_URL}
     depends_on:
       - db
     networks:
