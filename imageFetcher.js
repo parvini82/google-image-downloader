@@ -10,7 +10,7 @@ const fetchImageUrls = async (query, maxResults = 5) => {
         maxBodyLength: Infinity,
         url: 'https://google.serper.dev/images',
         headers: {
-            'X-API-KEY': process.env.SERPER_API_KEY,  // Using environment variable for API key
+            'X-API-KEY': process.env.SERPER_API_KEY, 
             'Content-Type': 'application/json'
         },
         data: data
