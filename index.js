@@ -5,6 +5,7 @@ const path = require('path');
 
 
 const main = async (query, maxResults = 5) => {
+    await createImagesTableIfNotExists(); // Ensures the table is created before other operations
     const imageUrls = await fetchImageUrls(query, maxResults);
 
     for (let i = 0; i < imageUrls.length; i++) {

@@ -6,6 +6,26 @@ const pool = new Pool({
     connectionString: process.env.DATABASE_URL
 });
 
+const createImagesTableIfNotExists = async () => {
+    const client = await pool.connect();
+    try {
+        const createTableQuery = `
+            CREATE TABLE IF NOT EXISTS images (
+                id SERIAL PRIMARY KEY,
+                query VARCHAR(255),
+                url TEXT,
+                data BYTEA
+            `;
+        ;
+        await client.query(createTableQuery);
+        console.log("Table 'images' is ready.");
+    } catch (error) {
+        console.error("Error creating table:", error.message);
+    } finally {
+        client.release();
+    }
+};
+
 const saveImageToDatabase = async (query, imageUrl, imageBuffer) => {
     const client = await pool.connect();
     try {
@@ -20,4 +40,4 @@ const saveImageToDatabase = async (query, imageUrl, imageBuffer) => {
     }
 };
 
-module.exports = { saveImageToDatabase, pool };
+module.exports = { createImagesTableIfNotExists, saveImageToDatabase, pool };
